@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+    <title>Net Art title</title> <!-- put your net art project title here -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+      <body>
+    <script type="text/javascript">
+    const barWidth = 20;
+  let lastBar = -1;
+
+  function setup() {
+    createCanvas(windowWidth, windowHeight);
+    colorMode(HSB, height, height, height);
+    noStroke();
+    background(0);
+  }
+
+  function draw() {
+    let whichBar = mouseX / barWidth;
+    if (whichBar !== lastBar) {
+      let barX = whichBar * barWidth;
+      if (whichBar < lastBar) {
+        fill(mouseY, height, height);
+
+      }
+      else {
+        fill(0, 0, 0);
+      }
+      rect(barX, 0, barWidth, height);
+      lastBar = whichBar;
+    }
+  }
+  new p5 ();
+    </script>
+      </body>
+    </html>
